@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calculator">
+        <form action="CalculatorServlet" method="post">
+            <input type="text" id="display" name="display" readonly>
+
+            <div class="buttons">
+                <!-- Numbers -->
+                <button type="button" onclick="append('7')">7</button>
+                <button type="button" onclick="append('8')">8</button>
+                <button type="button" onclick="append('9')">9</button>
+
+                <button type="button" onclick="append('4')">4</button>
+                <button type="button" onclick="append('5')">5</button>
+                <button type="button" onclick="append('6')">6</button>
+
+                <button type="button" onclick="append('1')">1</button>
+                <button type="button" onclick="append('2')">2</button>
+                <button type="button" onclick="append('3')">3</button>
+
+                <button type="button" onclick="append('0')">0</button>
+                <button type="button" onclick="append('.')">.</button>
+                <button type="button" onclick="clearDisplay()">C</button>
+
+                <!-- Operations -->
+                <button type="button" onclick="append('+')">+</button>
+                <button type="button" onclick="append('-')">-</button>
+                <button type="button" onclick="append('*')">*</button>
+                <button type="button" onclick="append('/')">/</button>
+                <button type="button" onclick="append('%')">%</button>
+                <button type="button" onclick="append('^2')">x²</button>
+                <button type="button" onclick="append('√')">√</button>
+
+                <button type="submit">=</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function append(value) {
+            const display = document.getElementById("display");
+            display.value += value;
+        }
+
+        function clearDisplay() {
+            document.getElementById("display").value = "";
+        }
+    </script>
+</body>
+</html>
